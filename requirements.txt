@@ -5,3 +5,4 @@ django-tables2
 djangorestframework
 daphne
 python-decouple
+psycopg2-binary
