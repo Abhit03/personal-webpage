@@ -266,3 +266,6 @@ modules.xml
 
 ### WSGI
 wsgi/static/
+
+#Test Scripts
+test_script.txt
