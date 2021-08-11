@@ -6,3 +6,4 @@ djangorestframework
 daphne
 python-decouple
 psycopg2-binary
+django-tables2
