@@ -132,7 +132,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'home/static'), os.path.join(BASE_DIR, 'listcourses/static'))
-STATIC_ROOT = os.path.join(BASE_DIR, '/sock/asgi/static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'wsgi/static')
+#STATIC_ROOT = os.path.join(BASE_DIR, '/sock/asgi/static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
