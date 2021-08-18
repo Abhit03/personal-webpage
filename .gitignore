@@ -266,7 +266,6 @@ modules.xml
 
 ### WSGI
 wsgi/static/
-static/
 
 manage.py
 database
