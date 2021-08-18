@@ -1,22 +1,36 @@
 {% extends 'basepage/base.html' %}
-{% block title %}List{% endblock %}
 
-{% load static %}
+{% block title %}
+List
+{% endblock %}
 
 {% block style %}
-    <link rel="stylesheet" type="text/css" href="{% static "listruns/css/list_table.css" %}">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static "listcourses/css/list_table.css" %}">
 {% endblock %}
 
 {% block content %}
-    {% if table %}
-    <!-- div class="overflow-auto scrollbar border-light shadow m-1 bg-white" id="style-1"-->
-    <div class="overflow-auto px-3 bg-white" id="style-1">
-        {% load render_table from django_tables2 %}
-        {% render_table table %}
+    {% load render_table from django_tables2 %}
+    {% load bootstrap3 %}
+    <div class="container-fluid">
+        <h1 class="my-3" align="center">Completed Courses</h1>
+        <ul class="nav nav-tabs mb-2">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#masters">Masters</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#masters">Bachelors</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#masters">Others</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="masters" class="tab-pane fade in active show">
+                <h3>M.Sc Sceintific Computing</h3>
+                <img height="100" src="{% static "listcourses/img/heidelberg_logo.png" %}" alt="Heidelberg Uni Logo">
+                {% if masters_table %}
+                    {% render_table masters_table 'django_tables2/bootstrap.html' %}
+                {% else %}
+                    <div class="alert alert-danger" role="alert">No Table found.</div>
+                {% endif %}
+            </div>
+        </div>
     </div>
-    {% else %}
-        <div class="alert alert-danger" role="alert">No Table found.</div>
-    {% endif %}
 {% endblock %}
 
 

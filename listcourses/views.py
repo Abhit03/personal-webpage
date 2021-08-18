@@ -2,7 +2,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 from courses.models import Course
-from tables.tables import CourseTable
+from tables.tables import MastersCourseTable
 
 # Create your views here.
 def listcourses(request):
@@ -11,9 +11,9 @@ def listcourses(request):
     """
     context = {}
     course_list = Course.objects.all()
-    table = CourseTable(course_list)
+    masters_table = MastersCourseTable(course_list)
 
-    context["table"] = table
+    context["masters_table"] = masters_table
     return render(request, "listcourses/list.html", context)
 
 

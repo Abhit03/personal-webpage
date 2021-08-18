@@ -8,22 +8,19 @@ from django.utils.safestring import mark_safe
 from courses.models import Course
 
 
-class CourseTable(tables.Table):
+class MastersCourseTable(tables.Table):
     """
     Simple readonly table listing all the courses with Grades
     """
 
     name = tables.Column(verbose_name = "Course Name")
     grade = tables.Column()
-    gradescale = tables.Column()
-    coursetype = tables.Column()
-    description = tables.Column()
-    comment = tables.TemplateColumn(
+    subject = tables.Column()
+    description = tables.TemplateColumn(
         '<div id="id_comment">'
             '{{record.comment}}'
         '</div>',
     )
-    externallinks = tables.Column()
 
     class Meta:
         model = Course

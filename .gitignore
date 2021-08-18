@@ -266,6 +266,10 @@ modules.xml
 
 ### WSGI
 wsgi/static/
+static/
+
+manage.py
+database
 
 #Test Scripts
 test_script.txt
