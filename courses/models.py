@@ -37,9 +37,10 @@ class Course(models.Model):
         ("b+", "B+"),
         ("b", "B"),
         ("c", "C"),
+        ("","")
     )
 
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=100)
     subject = models.CharField(choices=SUBJECT_CHOICES, max_length=25)
     coursetype = models.CharField(choices=COURSE_TYPE, max_length=25)
     credits = models.PositiveIntegerField(null=True)
