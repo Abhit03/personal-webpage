@@ -37,7 +37,6 @@ class Course(models.Model):
         ("b+", "B+"),
         ("b", "B"),
         ("c", "C"),
-        ("","")
     )
 
     name = models.CharField(max_length=100)
@@ -46,12 +45,12 @@ class Course(models.Model):
     credits = models.PositiveIntegerField(null=True)
     grade = models.FloatField(null=True)
     gradealphabet = models.CharField(choices=GRADE_ALPHABET_CHOICES, max_length=5, null=True)
-    gradescale = models.CharField(choices=GRADESCALE_CHOICES, max_length=50, null=True)
+    gradescale = models.CharField(choices=GRADESCALE_CHOICES, max_length=50, blank=True)
     description = models.TextField(blank = True)
     comment = models.TextField(blank = True)
     externallinks = models.TextField(blank = True)
     courselevel = models.CharField(max_length=25, choices=COURSE_LEVEL_CHOICES, null=True)
-    semester = models.PositiveSmallIntegerField(null=True)
+    semester = models.PositiveSmallIntegerField(null=True, blank = True)
 
     def __str__(self):
         return "{}".format(self.name)

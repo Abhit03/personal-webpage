@@ -1,5 +1,6 @@
 import django_tables2 as tables
 from django.utils.safestring import mark_safe
+from django.utils.html import escape, format_html
 
 # from tables.utilities.utilities import (
 #     render_component,
@@ -16,19 +17,21 @@ class MastersCourseTable(tables.Table):
     name = tables.Column(verbose_name = "Course Name")
     grade = tables.Column()
     subject = tables.Column()
-    description = tables.TemplateColumn(
-        '<div id="id_comment">'
-            '{{record.comment}}'
-        '</div>',
-    )
+    description = tables.Column()
 
     class Meta:
         model = Course
         fields = ()
         attrs = {"class": "table table-hover table-bordered table-fixed"}
 
-
-
-
-
+    def render_description(self, value):
+        value_list = value.split(",")
+        li_tags = ''
+        for item in value_list:
+            li_tags += '<li>{}</li>'.format(item)
+        return mark_safe(
+            '<ul>'
+            '{}'
+            '</ul>'.format(li_tags)
+        )
 
