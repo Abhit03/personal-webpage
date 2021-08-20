@@ -1,6 +1,6 @@
 import django_tables2 as tables
 from django.utils.safestring import mark_safe
-from django.utils.html import escape, format_html
+from tables.utilities.utilities import render_grade_color
 
 # from tables.utilities.utilities import (
 #     render_component,
@@ -34,4 +34,8 @@ class MastersCourseTable(tables.Table):
             '{}'
             '</ul>'.format(li_tags)
         )
+
+    def render_grade(self, value):
+        print(value)
+        return render_grade_color(value)
 
