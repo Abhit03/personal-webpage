@@ -16,10 +16,11 @@ List
         <h1 class="my-3" align="center">Completed Courses</h1>
         <ul class="nav nav-tabs mb-2">
             <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#masters">Masters</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#masters">Bachelors</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#bachelors">Bachelors</a></li>
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#masters">Others</a></li>
         </ul>
         <div class="tab-content">
+
             <div id="masters" class="tab-pane fade in active show">
                 <h3>M.Sc Sceintific Computing</h3>
                 <img height="100" src="{% static "listcourses/img/heidelberg_logo.png" %}" alt="Heidelberg Uni Logo">
@@ -29,6 +30,16 @@ List
                     <div class="alert alert-danger" role="alert">No Table found.</div>
                 {% endif %}
             </div>
+
+            <div id="bachelors" class="tab-pane fade in active show">
+                <h3>B.Sc Physics, Mathematics & Electronics</h3>
+                {% if bachelors_table %}
+                    {% render_table bachelors_table 'django_tables2/bootstrap.html' %}
+                {% else %}
+                    <div class="alert alert-danger" role="alert">No Table found.</div>
+                {% endif %}
+            </div>
+
         </div>
     </div>
 {% endblock %}
