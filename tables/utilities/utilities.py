@@ -11,7 +11,6 @@ def render_grade_color(grade): # pragma: no cover
     elif grade >= 2.0 and grade <= 3.3:
         css_class = "normal-grade"
 
-    print('<div class="{}">{}</div>'.format(css_class, grade))
     return mark_safe(
         '<div class="{}">{}</div>'.format(css_class, grade)
     )

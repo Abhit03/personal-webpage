@@ -36,6 +36,5 @@ class MastersCourseTable(tables.Table):
         )
 
     def render_grade(self, value):
-        print(value)
         return render_grade_color(value)
 
