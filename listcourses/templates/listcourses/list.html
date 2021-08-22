@@ -31,8 +31,9 @@ List
                 {% endif %}
             </div>
 
-            <div id="bachelors" class="tab-pane fade in active show">
+            <div id="bachelors" class="tab-pane fade">
                 <h3>B.Sc Physics, Mathematics & Electronics</h3>
+                <img height="75" src="{% static "listcourses/img/christ_logo.png" %}" alt="Christ Uni Logo">
                 {% if bachelors_table %}
                     {% render_table bachelors_table 'django_tables2/bootstrap.html' %}
                 {% else %}

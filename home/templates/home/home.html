@@ -17,7 +17,7 @@
                     </div>
                     <img class="card-img-top embed-responsive-item img" src="{% static "home/img/datascientist.png" %}" alt="Card image cap">
                     <div class="card-body">
-                        <p class="card-text text-center" style="font-size: 18px">Projects & Expeirence</p>
+                        <p class="card-text text-center" style="font-size: 18px">Projects</p>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,18 @@
                     </div>
                     <img class="card-img-top embed-responsive-item img" src="{% static "home/img/academic.png" %}" alt="Card image cap">
                     <div class="card-body">
-                        <p class="card-text text-center" style="font-size: 18px">Coursework, Seminars etc</p>
+                        <p class="card-text text-center" style="font-size: 18px">Coursework</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card h-50">
+                <div class="btn btn-dark" onclick="location.href='{% url 'listcourses:list' %}'">
+                    <div class="card-header">
+                        <h4 class="text-center font-weight-bold mt-1 mb-1">Leisure</h4>
+                    </div>
+                    <img class="card-img-top embed-responsive-item img" src="{% static "home/img/leisure.png" %}" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text text-center" style="font-size: 18px">Activities</p>
                     </div>
                 </div>
             </div>

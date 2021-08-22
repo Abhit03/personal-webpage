@@ -272,3 +272,7 @@ database
 
 #Test Scripts
 test_script.txt
+
+manage.py
+databse
+courses/migrations/
