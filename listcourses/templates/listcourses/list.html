@@ -17,12 +17,12 @@ List
         <ul class="nav nav-tabs mb-2">
             <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#masters">Masters</a></li>
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#bachelors">Bachelors</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#masters">Others</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#others">Online i.a.</a></li>
         </ul>
         <div class="tab-content">
 
             <div id="masters" class="tab-pane fade in active show">
-                <h3>M.Sc Sceintific Computing</h3>
+                <h3>M.Sc Scientific Computing</h3>
                 <img height="100" src="{% static "listcourses/img/heidelberg_logo.png" %}" alt="Heidelberg Uni Logo">
                 {% if masters_table %}
                     {% render_table masters_table 'django_tables2/bootstrap.html' %}
@@ -36,6 +36,16 @@ List
                 <img height="75" src="{% static "listcourses/img/christ_logo.png" %}" alt="Christ Uni Logo">
                 {% if bachelors_table %}
                     {% render_table bachelors_table 'django_tables2/bootstrap.html' %}
+                {% else %}
+                    <div class="alert alert-danger" role="alert">No Table found.</div>
+                {% endif %}
+            </div>
+
+            <div id="others" class="tab-pane fade">
+                <h3>Online & Additional courses</h3>
+
+                {% if others_table %}
+                    {% render_table others_table 'django_tables2/bootstrap.html' %}
                 {% else %}
                     <div class="alert alert-danger" role="alert">No Table found.</div>
                 {% endif %}

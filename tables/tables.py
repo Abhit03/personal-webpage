@@ -1,5 +1,6 @@
 import django_tables2 as tables
 from django.utils.safestring import mark_safe
+from django.utils.html import format_html
 from tables.utilities.utilities import render_grade_color, render_gradealphabet_color
 
 # from tables.utilities.utilities import (
@@ -54,3 +55,24 @@ class BachelorsCourseTable(tables.Table):
 
     def render_gradealphabet(self, value):
         return render_gradealphabet_color(value)
+
+class OthersCourseTable(tables.Table):
+    """
+    Simple readonly table listing online courses
+    """
+
+    name = tables.Column(verbose_name = "Course Name")
+    subject = tables.Column()
+    comment = tables.Column(verbose_name = "Details")
+    externallinks = tables.Column(verbose_name = "Links")
+
+    class Meta:
+        model = Course
+        fields = ()
+        attrs = {"class": "table table-hover table-bordered table-fixed"}
+
+    def render_externallinks(self, value):
+        return format_html(
+            '<a href="{}">'
+            'Certificate'
+            '</a>', value)
