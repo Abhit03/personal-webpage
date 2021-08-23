@@ -62,8 +62,8 @@ class OthersCourseTable(tables.Table):
     """
 
     name = tables.Column(verbose_name = "Course Name")
-    subject = tables.Column()
-    comment = tables.Column(verbose_name = "Details")
+    comment = tables.Column(verbose_name = "Platform")
+    description = tables.Column(verbose_name = "Offered by")
     externallinks = tables.Column(verbose_name = "Links")
 
     class Meta:

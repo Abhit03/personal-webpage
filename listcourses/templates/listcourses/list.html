@@ -43,7 +43,7 @@ List
 
             <div id="others" class="tab-pane fade">
                 <h3>Online & Additional courses</h3>
-
+                <img height="75" src="{% static "listcourses/img/online_logo.png" %}" alt="Online platform Logo">
                 {% if others_table %}
                     {% render_table others_table 'django_tables2/bootstrap.html' %}
                 {% else %}
