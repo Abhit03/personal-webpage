@@ -1,0 +1,58 @@
+{% extends 'basepage/base.html' %}
+
+{% block title %}
+List
+{% endblock %}
+
+{% block style %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static "listprojects/css/list_table.css" %}" type="text/css">
+{% endblock %}
+
+{% block content %}
+    {% load render_table from django_tables2 %}
+    {% load bootstrap3 %}
+    <div class="container-fluid">
+        <h1 class="my-3" align="center">Completed Projects</h1>
+        <ul class="nav nav-tabs mb-2">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#cern">CERN</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#sharedelectric">Shared Electric</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#heidelberg">Uni Heidelberg</a></li>
+        </ul>
+        <div class="tab-content">
+
+            <div id="cern" class="tab-pane fade in active show">
+                <h3>Technical Student, EP-CMS Department</h3>
+                <img height="100" src="{% static "listprojects/img/cern_cms.png" %}" alt="CERN CMS Logo">
+                {% if cern_table %}
+                    {% render_table cern_table 'django_tables2/bootstrap.html' %}
+                {% else %}
+                    <div class="alert alert-danger" role="alert">No Table found.</div>
+                {% endif %}
+            </div>
+
+            <div id="sharedelectric" class="tab-pane fade">
+                <h3>Data Analysis & Instrumentation Design</h3>
+                <img height="75" src="{% static "listprojects/img/sharedelectric.png" %}" alt="Shared Electric Logo">
+                {% if sharedelectric_table %}
+                    {% render_table sharedelectric_table 'django_tables2/bootstrap.html' %}
+                {% else %}
+                    <div class="alert alert-danger" role="alert">No Table found.</div>
+                {% endif %}
+            </div>
+
+            <div id="heidelberg" class="tab-pane fade">
+                <h3>Teaching Assistant</h3>
+                <img height="100" src="{% static "listprojects/img/heidelberg_logo.png" %}" alt="Heidelberg Uni Logo">
+                {% if heidelberg_table %}
+                    {% render_table heidelberg_table 'django_tables2/bootstrap.html' %}
+                {% else %}
+                    <div class="alert alert-danger" role="alert">No Table found.</div>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+

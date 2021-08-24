@@ -276,3 +276,4 @@ test_script.txt
 manage.py
 databse
 courses/migrations/
+projects/migrations/

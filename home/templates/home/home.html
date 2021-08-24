@@ -11,7 +11,8 @@
     <div class="container">
         <div class="card-deck">
             <div class="card h-50">
-                <div class="btn btn-dark" onclick="location.href='{% url 'listcourses:list' %}'">
+                <div class="btn btn-dark" onclick="location.href='{% url 'listprojects:listprojects' %}'">
+                <a href="#">
                     <div class="card-header">
                         <h4 class="text-center font-weight-bold mt-1 mb-1">Professional</h4>
                     </div>
@@ -19,10 +20,12 @@
                     <div class="card-body">
                         <p class="card-text text-center" style="font-size: 18px">Projects</p>
                     </div>
+                </a>
                 </div>
             </div>
             <div class="card h-50">
-                <div class="btn btn-dark" onclick="location.href='{% url 'listcourses:list' %}'">
+                <div class="btn btn-dark" onclick="location.href='{% url 'listcourses:listcourses' %}'">
+                <a href="#">
                     <div class="card-header">
                         <h4 class="text-center font-weight-bold mt-1 mb-1">Academic</h4>
                     </div>
@@ -30,10 +33,12 @@
                     <div class="card-body">
                         <p class="card-text text-center" style="font-size: 18px">Coursework</p>
                     </div>
+                </a>
                 </div>
             </div>
             <div class="card h-50">
-                <div class="btn btn-dark" onclick="location.href='{% url 'listcourses:list' %}'">
+                <div class="btn btn-dark" onclick="location.href='{% url 'listcourses:listcourses' %}'">
+                <a href="#">
                     <div class="card-header">
                         <h4 class="text-center font-weight-bold mt-1 mb-1">Leisure</h4>
                     </div>
@@ -41,6 +46,7 @@
                     <div class="card-body">
                         <p class="card-text text-center" style="font-size: 18px">Activities</p>
                     </div>
+                </a>
                 </div>
             </div>
         </div>

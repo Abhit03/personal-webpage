@@ -2,3 +2,15 @@
     width: 100% !important;
     height: 185px !important;
 }
+
+a:hover {
+    text-decoration: none;
+}
+
+h4 {
+    color: white;
+}
+
+p {
+    color: white;
+}

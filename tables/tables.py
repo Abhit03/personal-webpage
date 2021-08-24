@@ -8,6 +8,7 @@ from tables.utilities.utilities import render_grade_color, render_gradealphabet_
 # )
 
 from courses.models import Course
+from projects.models import Project
 
 
 class MastersCourseTable(tables.Table):
@@ -75,4 +76,27 @@ class OthersCourseTable(tables.Table):
         return format_html(
             '<a href="{}">'
             'Certificate'
+            '</a>', value)
+
+class ProjectsTable(tables.Table):
+    """
+    Simple readonly table listing completed rpoject
+    """
+
+    name = tables.Column(verbose_name = "Project Name")
+    duration = tables.Column()
+    languages = tables.Column(verbose_name = "Languages & Frameworks")
+    description = tables.Column(verbose_name = "Short description")
+    applink = tables.Column(verbose_name = "Application link")
+    codebase = tables.Column()
+    
+    class Meta:
+        model = Project
+        fields = ()
+        attrs = {"class": "table table-hover table-bordered table-fixed"}
+
+    def render_codebase(self, value):
+        return format_html(
+            '<a href="{}">'
+            'Github'
             '</a>', value)
