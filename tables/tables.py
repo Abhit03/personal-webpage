@@ -83,9 +83,9 @@ class ProjectsTable(tables.Table):
     Simple readonly table listing completed rpoject
     """
 
-    name = tables.Column(verbose_name = "Project Name")
-    duration = tables.Column()
+    name = tables.Column(verbose_name = "Name")
     languages = tables.Column(verbose_name = "Languages & Frameworks")
+    tools = tables.Column(verbose_name = "Deployment Tools")
     description = tables.Column(verbose_name = "Short description")
     applink = tables.Column(verbose_name = "Application link")
     codebase = tables.Column()
@@ -100,3 +100,22 @@ class ProjectsTable(tables.Table):
             '<a href="{}">'
             'Github'
             '</a>', value)
+
+    def render_applink(self, value):
+        return format_html(
+            '<a href="{}">'
+            'App'
+            '</a>', value)
+
+    def render_languages(self, value):
+        value_list = value.split(",")
+        li_tags = ''
+        for item in value_list:
+            item = item.replace("Python", "<div class='language_python'>python</div>")
+            item = item.replace("PostgreSQL", "<div class='database'>PostgreSQL</div>")
+            li_tags += '<li>{}</li>'.format(item)
+        return mark_safe(
+            '<ul>'
+            '{}'
+            '</ul>'.format(li_tags)
+        )

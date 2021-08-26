@@ -1,4 +1,4 @@
-{% extends 'basepage/base.html' %}
+{% extends 'basepage/homebase.html' %}
 
 {% load static %}
 
@@ -7,15 +7,28 @@
 {% endblock style %}
 
 {% block content %}
-<div class="album py-4 bg-light">
+<div class="album bg-light">
+    <div class="row gx-3 my-4 align-items-center">
+        <div class="col-md-3 ml-5">
+            <img class="img-fluid" src="{% static "home/img/abhit_cir.png" %}" alt="Abhit circular" style="padding-left: 45px;"/>
+        </div>
+        <div class="col-md-8 ml-3">
+            <h1 class="font-weight-light" style="color: #6a7179;">Hi! I'm Abhit</h1>
+                <p style="color: #6a7179;" >
+                    I am a data analyst and programmer who is interested in building scientific softwares and data-driven products.
+                    I have an academic background in Physics, Mathematics and Scientific Computing.
+                </p>
+        </div>
+    </div>
+    <!-- Call to Action-->
+    <div class="card text-white bg-secondary my-2 py-1 text-center">
+        <div class="card-body"><p class="text-white m-0">"We live on an island surrounded by a sea of ignorance. As our island of knowledge grows, so does the shore of our ignorance. - Wheeler J."</p></div>
+    </div>
     <div class="container">
-        <div class="card-deck">
+        <div class="card-deck my-3">
             <div class="card h-50">
-                <div class="btn btn-dark" onclick="location.href='{% url 'listprojects:listprojects' %}'">
+                <div class="btn btn-secondary" onclick="location.href='{% url 'listprojects:listprojects' %}'">
                 <a href="#">
-                    <div class="card-header">
-                        <h4 class="text-center font-weight-bold mt-1 mb-1">Professional</h4>
-                    </div>
                     <img class="card-img-top embed-responsive-item img" src="{% static "home/img/professional2.png" %}" alt="Card image cap">
                     <div class="card-body">
                         <p class="card-text text-center" style="font-size: 18px">Projects</p>
@@ -24,11 +37,8 @@
                 </div>
             </div>
             <div class="card h-50">
-                <div class="btn btn-dark" onclick="location.href='{% url 'listcourses:listcourses' %}'">
+                <div class="btn btn-secondary" onclick="location.href='{% url 'listcourses:listcourses' %}'">
                 <a href="#">
-                    <div class="card-header">
-                        <h4 class="text-center font-weight-bold mt-1 mb-1">Academic</h4>
-                    </div>
                     <img class="card-img-top embed-responsive-item img" src="{% static "home/img/academic.png" %}" alt="Card image cap">
                     <div class="card-body">
                         <p class="card-text text-center" style="font-size: 18px">Coursework</p>
@@ -37,11 +47,8 @@
                 </div>
             </div>
             <div class="card h-50">
-                <div class="btn btn-dark" onclick="location.href='{% url 'listcourses:listcourses' %}'">
+                <div class="btn btn-secondary" onclick="location.href='{% url 'listcourses:listcourses' %}'">
                 <a href="#">
-                    <div class="card-header">
-                        <h4 class="text-center font-weight-bold mt-1 mb-1">Leisure</h4>
-                    </div>
                     <img class="card-img-top embed-responsive-item img" src="{% static "home/img/leisure.png" %}" alt="Card image cap">
                     <div class="card-body">
                         <p class="card-text text-center" style="font-size: 18px">Activities</p>
