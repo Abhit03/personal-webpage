@@ -3,6 +3,11 @@
     height: 185px !important;
 }
 
+.img-dp {
+    width: 100% !important;
+    height: 185px !important;
+}
+
 a:hover {
     text-decoration: none;
 }
@@ -35,5 +40,10 @@ p {
 
 .fa-github {
     background: rgb(17, 21, 26);
+    color: white;
+}
+
+.fa-at {
+    background: rgb(97, 157, 194);
     color: white;
 }
