@@ -111,8 +111,21 @@ class ProjectsTable(tables.Table):
         value_list = value.split(",")
         li_tags = ''
         for item in value_list:
-            item = item.replace("Python", "<div class='language_python'>python</div>")
+            item = item.replace("Python", "<div class='language_python'>Python</div>")
             item = item.replace("PostgreSQL", "<div class='database'>PostgreSQL</div>")
+            item = item.replace("MySQL", "<div class='database'>MySQL</div>")
+            item = item.replace("C++", "<div class='lanuguage_c'>C++</div>")
+            li_tags += '<li>{}</li>'.format(item)
+        return mark_safe(
+            '<ul>'
+            '{}'
+            '</ul>'.format(li_tags)
+        )
+
+    def render_tools(self, value):
+        value_list = value.split(",")
+        li_tags = ''
+        for item in value_list:
             li_tags += '<li>{}</li>'.format(item)
         return mark_safe(
             '<ul>'

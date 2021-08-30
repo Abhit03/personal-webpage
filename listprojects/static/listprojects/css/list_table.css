@@ -6,6 +6,14 @@
     color: white;
 }
 
+.language_c {
+    border-radius: 25px;
+    width: 64px;
+    text-align: center;
+    background-color: #4a77b9;
+    color: white;
+}
+
 .database {
     border-radius: 25px;
     width: 94px;
