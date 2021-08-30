@@ -102,10 +102,17 @@ class ProjectsTable(tables.Table):
             '</a>', value)
 
     def render_applink(self, value):
-        return format_html(
-            '<a href="{}">'
-            'App'
-            '</a>', value)
+        values = value.split(",")
+        if len(values) is 1:
+            return format_html(
+                '<a href="{}">'
+                'App'
+                '</a>', value)
+        else:
+            return format_html(
+                '<a href="{}">'
+                "{}"
+                '</a>', values[1], values[0])
 
     def render_languages(self, value):
         value_list = value.split(",")
@@ -114,7 +121,7 @@ class ProjectsTable(tables.Table):
             item = item.replace("Python", "<div class='language_python'>Python</div>")
             item = item.replace("PostgreSQL", "<div class='database'>PostgreSQL</div>")
             item = item.replace("MySQL", "<div class='database'>MySQL</div>")
-            item = item.replace("C++", "<div class='lanuguage_c'>C++</div>")
+            item = item.replace("C++", "<div class='language_c'>C++</div>")
             li_tags += '<li>{}</li>'.format(item)
         return mark_safe(
             '<ul>'
