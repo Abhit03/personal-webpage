@@ -1,0 +1,115 @@
+{% extends 'basepage/base.html' %}
+
+{% block title %}
+Photography
+{% endblock %}
+
+{% block style %}
+    {% load static %}
+{% endblock style %}
+
+{% load bootstrap3 %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h2>Photography</h2>
+    <p>I click with devices lying in the extreme end of spectrum when it comes to 'controls'.</p>
+    <p>At one end is a 1970s built film camera 'Yashica electro GSN' which has manual control for - Aperture, Focus & Shutter speed. 
+      The other one is a smartphone (iphone SE), so has some automatic image processing features and less manual options</p>
+    <p>The device I pick depends on the place I am exploring. I tend to go with Rangefinder on relaxing journeys where I can take my time 
+        and set up the camera; And the smartphone when I have to worry about the weight of my backpack</p>
+    <p>Here are some photos I shot in the recent months. Click to enlarge them.</p>
+    <br>
+    <div class="row">
+
+        <div class="col-md-4">
+            <div class="thumbnail">
+            <a href="{% static "listactivities/img/bern1.jpeg" %}" target="_blank">
+                <img src="{% static "listactivities/img/bern1.jpeg" %}" alt="Lights" style="width:100%">
+            </a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="thumbnail">
+            <a href="{% static "listactivities/img/sulpice2.jpeg" %}" target="_blank">
+                <img src="{% static "listactivities/img/sulpice2.jpeg" %}" alt="Lights" style="width:100%">
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="thumbnail">
+            <a href="{% static "listactivities/img/wengen1.jpeg" %}" target="_blank">
+                <img src="{% static "listactivities/img/wengen1.jpeg" %}" alt="Lights" style="width:100%">
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <div class="thumbnail">
+            <a href="{% static "listactivities/img/evian1.jpeg" %}" target="_blank">
+                <img src="{% static "listactivities/img/evian1.jpeg" %}" alt="Lights" style="width:100%">
+            </a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="thumbnail">
+            <a href="{% static "listactivities/img/sulpice1.jpeg" %}" target="_blank">
+                <img src="{% static "listactivities/img/sulpice1.jpeg" %}" alt="Lights" style="width:100%">
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="thumbnail">
+            <a href="{% static "listactivities/img/morges1.jpeg" %}" target="_blank">
+                <img src="{% static "listactivities/img/morges1.jpeg" %}" alt="Lights" style="width:100%">
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-8">
+            <div class="thumbnail">
+            <a href="{% static "listactivities/img/bern4.jpeg" %}" target="_blank">
+                <img src="{% static "listactivities/img/bern4.jpeg" %}" alt="Lights" style="width:100%">
+            </a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="thumbnail">
+            <a href="{% static "listactivities/img/bern2.jpeg" %}" target="_blank">
+                <img src="{% static "listactivities/img/bern2.jpeg" %}" alt="Lights" style="width:100%">
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
+{% endblock %}

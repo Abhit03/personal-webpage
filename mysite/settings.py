@@ -35,6 +35,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'listactivities.apps.ListactivitiesConfig',
     'projects.apps.ProjectsConfig',
     'listprojects.apps.ListprojectsConfig',
     'listcourses.apps.ListcoursesConfig',
