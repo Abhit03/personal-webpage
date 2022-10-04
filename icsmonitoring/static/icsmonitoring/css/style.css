@@ -1,0 +1,49 @@
+.img {
+    width: 100% !important;
+    height: 185px !important;
+}
+
+.img-dp {
+    width: 100% !important;
+    height: 185px !important;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+h5 {
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+.fa-github {
+    background: rgb(17, 21, 26);
+    color: white;
+}
+
+.fa-at {
+    background: rgb(97, 157, 194);
+    color: white;
+}

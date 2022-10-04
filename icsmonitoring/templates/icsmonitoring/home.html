@@ -1,0 +1,101 @@
+{% extends 'homebase.html' %}
+
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static "icsmonitoring/css/style.css" %}">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock style %}
+
+{% block content %}
+<div class="album bg-light">
+    <div class="card text-white bg-secondary my-2 py-1 text-center" style="width: 100%">
+        <div class="card-body">
+            <h1 class="font-weight-light">ICS Monitoring</h1>
+            <p class="text-white m-0">Web application to monitor Industrial Control Systems at CERN.  
+            </p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card-deck my-3">
+            <div class="card h-50">
+                <div class="btn btn-secondary" onclick="location.href='#'">
+                <a href="#">
+                    <img class="card-img-top embed-responsive-item img" src="{% static "icsmonitoring/img/siemens_s7_1500.png" %}" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text text-center" style="font-size: 18px">PLC</p>
+                    </div>
+                </a>
+                </div>
+            </div>
+            <div class="card h-50">
+                <div class="btn btn-secondary" onclick="location.href='#'">
+                <a href="#">
+                    <img class="card-img-top embed-responsive-item img" src="{% static "icsmonitoring/img/wincc_oa.png" %}" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text text-center" style="font-size: 18px">SCADA</p>
+                    </div>
+                </a>
+                </div>
+            </div>
+            <div class="card h-50">
+                <div class="btn btn-secondary" onclick="location.href='#'">
+                <a href="#">
+                    <img class="card-img-top embed-responsive-item img" src="{% static "icsmonitoring/img/fieldbus.png" %}" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text text-center" style="font-size: 18px">Fieldbus</p>
+                    </div>
+                </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+            <h4 style="color: #6a7179;" class="font-weight-light">The tool contains the three main apps.</h4>
+            <ul style="color: #6a7179;">
+            <li>PLC - Monitor all PLCs</li>
+            <li>SCADA - Monitor WinCC OA projects</li>
+            <li>Fieldbus - Monitor FieldBus network</li>
+            </ul>
+    </div>
+</div>
+
+<footer class="page-footer font-small pt-4">
+    <hr style="width: 100%; color: #6a7179;; height: 3px; background-color: #6a7179;" />
+    <div class="container-fluid text-center text-md-left">
+        <!-- Grid row -->
+        <div class="row">
+            <div class="col-md-2 mb-md-0 mb-3">
+                <!-- Links -->
+                <h6 style="color: #6a7179;" class="text-uppercase">Links</h5>
+                <ul class="list-unstyled">
+                <li><a href="https://github.com/CMSTrackerDPG/MLplayground">Github</a></li>
+                <li><a href="#!">Contact Us</a></li>
+                <li><a href="https://github.com/CMSTrackerDPG/MLplayground/blob/master/Development-Docs/start.md">User Manual</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 mb-md-0 mb-3">
+            </div>
+            <!-- Grid column -->
+            <div class="col-md-6 mt-md-0 mt-3">
+                <!-- Content -->
+                <!-- <h6 style="color: #6a7179;" class="text-uppercase">ABOUT THE PROJECT</h5>
+                <p style="color: #6a7179;">
+                    This open source project is an initiative by CMS Tracker DPG. 
+                    It is built using Python-Django, PostgreSQL, Altair etc.
+                </p> -->
+            </div>
+            <!-- Grid column -->
+            <!-- Grid column -->
+            
+            
+            <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+    </div>
+</footer>
+{% endblock content %}
+
+{% block scripts %}
+{% endblock scripts %}
